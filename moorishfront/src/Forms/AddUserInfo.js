@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './AddUserInfo.css';
 import axios from "axios";
+import {Elements, StripeProvider} from "react-stripe-elements";
+import CheckoutForm from "./CheckoutForm";
+
 
 class AddUserInfo extends Component{
 
@@ -119,7 +122,17 @@ class AddUserInfo extends Component{
                     type="button"
                     value="Submit"
                     onClick={this.submitForm} />
+                <StripeProvider apiKey="pk_test_JhtvLx6RBQkhFgP9ZUDqBumD">
+                    <div className="example">
+                        <h1>React Stripe Elements Example</h1>
+                        <Elements>
+                            <CheckoutForm />
+                        </Elements>
+                    </div>
+                </StripeProvider>
             </form>
+
+
         )
     }
 }

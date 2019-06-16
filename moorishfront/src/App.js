@@ -9,8 +9,7 @@ import logo from "./resources/logo.png";
 import './Forms/Menu.css';
 import products from "./Forms/Products";
 
-import {Elements, StripeProvider} from 'react-stripe-elements';
-import CheckoutForm from './Forms/CheckoutForm';
+
 import AddUserInfo from "./Forms/AddUserInfo";
 import productDetail from "./Forms/ProductDetail";
 
@@ -97,14 +96,7 @@ class App extends Component {
                     </div>
                 </Router>
 
-                <StripeProvider apiKey="pk_test_JhtvLx6RBQkhFgP9ZUDqBumD">
-                    <div className="example">
-                        <h1>React Stripe Elements Example</h1>
-                        <Elements>
-                            <CheckoutForm />
-                        </Elements>
-                    </div>
-                </StripeProvider>
+
 
             </>
         );
