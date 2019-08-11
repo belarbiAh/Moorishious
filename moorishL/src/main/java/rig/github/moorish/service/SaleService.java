@@ -3,7 +3,9 @@ package rig.github.moorish.service;
 import java.util.List;
 import java.util.Optional;
 
+import rig.github.moorish.model.AppUser;
 import rig.github.moorish.model.Bag;
+import rig.github.moorish.model.Product;
 import rig.github.moorish.model.Sale;
 
 public interface SaleService {
@@ -23,5 +25,8 @@ public interface SaleService {
 	void deleteSale(Long id);
 
 	void deleteBag(Long id);
+	
+	public Double calculateTotaleAmount(List<Product> products);
+	
 
 }

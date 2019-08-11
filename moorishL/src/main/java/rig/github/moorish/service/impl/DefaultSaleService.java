@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import rig.github.moorish.model.Bag;
+import rig.github.moorish.model.Product;
 import rig.github.moorish.model.Sale;
 import rig.github.moorish.repository.BagRepository;
 import rig.github.moorish.repository.SaleRepository;
@@ -67,5 +68,17 @@ public class DefaultSaleService implements SaleService{
 			System.out.println(e.getMessage());
 		}		
 	}
+	
+	@Transactional
+	public Double calculateTotaleAmount(List<Product> products) {
+		Double totalAmount = null;
+		for (Product product : products) {
+			totalAmount =+ product.getRef().getPrice();
+		}
+		
+		return totalAmount;
+	}
+	
+
 
 }

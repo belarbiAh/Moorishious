@@ -9,9 +9,10 @@ import logo from "./resources/logo.png";
 import './Forms/Menu.css';
 import products from "./Forms/Products";
 
-
-import AddUserInfo from "./Forms/AddUserInfo";
 import productDetail from "./Forms/ProductDetail";
+import bag from "./Forms/Bag.js";
+import addUserInfo from "./Forms/AddUserInfo";
+
 
 class App extends Component {
 
@@ -41,19 +42,10 @@ class App extends Component {
     }
 
     componentWillMount() {
-     /*   const config = {headers: {'Content-Type': 'multipart/form-data'}};
-        axios.get(`http://localhost:8080/listReference`, config)
-            .then(res => {
-                console.log(res.data);
-                this.setState({characters: res.data})
-            })
-            .catch((error) => {
-                console.log(error);
-            });*/
+
     }
 
     render() {
-        // const {characters} = this.state;
 
         return (
             <>
@@ -76,6 +68,9 @@ class App extends Component {
                                     <li>
                                         <Link className="cool" to="/addUserInfo">Add User</Link>
                                     </li>
+                                    <li>
+                                        <Link className="cool" to="/bag">Bag</Link>
+                                    </li>
                                 </ul>
                             </nav>
                             <div className="menu-toggle">
@@ -92,7 +87,8 @@ class App extends Component {
                         <Route path="/addReference" render={() => <AddReference handleSubmit={this.handleSubmit}/>}/>
                         <Route path="/products" component={products}/>
                         <Route path='/product/:id' component={productDetail}/>
-                        <Route path="/addUserInfo" component={AddUserInfo}/>
+                        <Route path="/addUserInfo" component={addUserInfo}/>
+                        <Route path="/bag" component={bag}/>
                     </div>
                 </Router>
 

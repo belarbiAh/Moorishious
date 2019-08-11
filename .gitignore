@@ -2,3 +2,8 @@ node_modules/
 .idea/
 moorishfront/node_modules/
 /.metadata/
+<<<<<<< HEAD
+=======
+.recommenders/
+.metadata/
+>>>>>>> 60683912396eb11526c20535ea0e21dfeccc5698

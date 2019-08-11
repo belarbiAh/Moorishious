@@ -5,7 +5,7 @@ import {Elements, StripeProvider} from "react-stripe-elements";
 import CheckoutForm from "./CheckoutForm";
 
 
-class AddUserInfo extends Component{
+class addUserInfo extends Component{
 
     constructor(props){
         super(props);
@@ -137,4 +137,4 @@ class AddUserInfo extends Component{
     }
 }
 
-export default AddUserInfo;
+export default addUserInfo;

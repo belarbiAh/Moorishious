@@ -128,28 +128,23 @@ public class ReferenceController {
 	}
 	
 		
-	@PostMapping("/getPaid")
+	@GetMapping("/getPaid")
 	public void getPayement(@RequestBody Payement payement , @RequestBody Sale sale) {
 		Stripe.apiKey = "sk_test_L7pTZLxEobdHSR10XSB7xQss";
 		
+		Sale s = new Sale();
+		s.setProducts(sale.getProducts());
+		
 		Payement p = new Payement();
 		p.setSource(payement.getSource());
-		p.setAmount(payement.getAmount());
+		Double amount = defaultSaleService.calculateTotaleAmount(sale.getProducts());
+		p.setAmount(amount);
 		p.setCurrency(payement.getCurrency());
 		p.setDescription(payement.getDescription());
 		
-		Sale s = new Sale();
-		s.setDate(sale.getDate());
-		s.setId(sale.getId());
-		s.setTotalAmount(sale.getTotalAmount());
-		s.setIsDelivred(sale.getIsDelivred());
-		s.setUser(sale.getUser());
-		
-		defaultSaleService.addOrUpdateSale(s);
-		
 		System.out.println("dkheel : " + p.getSource());
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("amount", p.getAmount());
+		params.put("amount", sale.getTotalAmount());
 		params.put("currency", p.getCurrency());
 		params.put("description", p.getDescription());
 		params.put("source", p.getSource());
@@ -158,7 +153,9 @@ public class ReferenceController {
 		} catch (Exception e) {
 			System.out.println("Erreur : " + e.getMessage());
 		}
-		
 	}
+	
+
+	
 	
 }
