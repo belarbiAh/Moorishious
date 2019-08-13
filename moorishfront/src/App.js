@@ -9,9 +9,11 @@ import logo from "./resources/logo.png";
 import './Forms/Menu.css';
 import products from "./Forms/Products";
 
-import productDetail from "./Forms/ProductDetail";
-import bag from "./Forms/Bag.js";
+
 import addUserInfo from "./Forms/AddUserInfo";
+import productDetail from "./Forms/ProductDetail";
+import Bag from "./Forms/Bag.js";
+
 
 
 class App extends Component {
@@ -88,7 +90,7 @@ class App extends Component {
                         <Route path="/products" component={products}/>
                         <Route path='/product/:id' component={productDetail}/>
                         <Route path="/addUserInfo" component={addUserInfo}/>
-                        <Route path="/bag" component={bag}/>
+                        <Route path="/bag" component={Bag}/>
                     </div>
                 </Router>
 

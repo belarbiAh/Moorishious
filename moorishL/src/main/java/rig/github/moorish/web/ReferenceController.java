@@ -154,8 +154,12 @@ public class ReferenceController {
 			System.out.println("Erreur : " + e.getMessage());
 		}
 	}
-	
 
-	
+	@PostMapping("/purchaseProducts")
+	public boolean purchaseProducts(@RequestBody Sale sale) {
+		System.out.println(sale.getTotalAmount());
+		return false;
+	}
+
 	
 }
